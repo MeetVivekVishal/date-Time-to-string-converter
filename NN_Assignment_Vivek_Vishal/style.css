@@ -1,0 +1,46 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.time .hour{
+    font-weight: bold;
+}
+
+.time .minute {
+    color: #c70039;
+}
+.clock {
+    text-align: center;
+}
+
+.clock .time{
+    display: inline-block;
+    font-size: 6em;
+    border-bottom: 4px solid;
+    padding-bottom: 2px;
+    display: inline-block;
+    padding-top: 14%;
+}
+
+.clock .time-text {
+    color: grey;
+    font-size: 2em;
+}
+
+.row {
+    display: flex;
+    
+}
+
+.column {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    flex: 50%;
+    text-align: left;
+    /* text-justify: distribute-all-lines; */
+    
+}
+.ml-6{
+    margin-left: 6%;
+}

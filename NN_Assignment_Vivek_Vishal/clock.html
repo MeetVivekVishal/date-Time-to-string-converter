@@ -1,0 +1,52 @@
+<!--this is a simple view implementation of a clock to display current time in hours and minutes 
+and translated into english redable format
+exported module dateToTimeString is hooked in script tag ,using provided type = module 
+
+tested and run on local web server since
+
+cannot be run on by just hitting this page in browser , as script type = module throws CORS compliance issue 
+for the provided file , hence a local web server is required to run the project 
+
+which web server used while testing : Chrome web server (extension of chrome - that creates a webserver on 
+selected directory and runs on a default port )
+
+externl libraries used (for font styling)
+for css style - custom file style.css hooked -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
+    </head>
+            <body>
+            <div class="clock">
+                <div id="time" class="time">
+                    <span id="time-hour" class="hour"></span> : <span id="time-minute" class="minute"></span>
+                </div>
+                <div  id="time-text" class ="time-text"></div>
+            </div>
+
+                <link rel="stylesheet" href="style.css">
+                <script type="module">
+                    import {dateToTimeString} from "./converter.js";
+                  
+                    function toStringUtil(input){
+                        if(input.toString().length<2){
+                            return "0"+ input.toString();
+                        }
+                        else{ return input;}
+                    }
+                    
+                    function updateTimer(){
+                        var date= new Date();
+                        document.getElementById('time-hour').innerHTML=toStringUtil(date.getHours());
+                        document.getElementById('time-minute').innerHTML=toStringUtil(date.getMinutes());
+                        document.getElementById('time-text').innerHTML=dateToTimeString(date);
+                    }
+                    updateTimer();
+                    setInterval(updateTimer,20000);
+                  </script>
+                
+                
+            </body>
+</html>
