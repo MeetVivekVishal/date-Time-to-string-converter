@@ -1,4 +1,3 @@
-# Notes from Developer 
 
 
 # Getting Started
@@ -23,14 +22,5 @@ Answer- used chrome web extension - "chrome web developer" , runs a web server o
 # 3.Are code comments included?
 Answer: yes . Js docs are also present in "out" folder.
 
-Test Cases 
-======================
-# 4. why there are two spec files ?
-Answer : Initially I started with Jasmine framework , changed my mind to use Mocha and chai , when found jasmine 
-doesn't support ES6 specifications. To use Mocha and Chai , I still needed external library.
-Hence I also wrote a custom utils  , which does very simple assertion and acts as naive JS test runner.
-
-Mocha unit tests = > converter.spec.js => displays on specRunner.html
-custom unit tests = > converterCustom.spec.js => displays on specRunner.html => uses testUtils.JS
 
 
